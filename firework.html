@@ -1,0 +1,17 @@
+<body>
+<audio id="bgMusic" loop><source src="love.mp3"></audio>
+<div id="musicControl">🔊</div>
+
+<canvas id="canvas"></canvas>
+<h1 class="final-text">🎆 Happy New Year My Love 🎆</h1>
+
+<script src="script.js"></script>
+<script>
+const c=document.getElementById("canvas"),x=c.getContext("2d");
+c.width=innerWidth;c.height=innerHeight;let f=[];
+setInterval(()=>{f.push({x:Math.random()*c.width,y:Math.random()*c.height,r:0});
+x.clearRect(0,0,c.width,c.height);
+f.forEach((a,i)=>{x.beginPath();x.arc(a.x,a.y,a.r,0,6.28);x.fillStyle="white";x.fill();a.r+=2;if(a.r>20)f.splice(i,1);});
+},100);
+</script>
+</body>
